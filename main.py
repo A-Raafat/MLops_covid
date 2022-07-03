@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI(title="Predicting Covid Class")
 
 #app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="/app/templates")
+#templates = Jinja2Templates(directory="/app/templates")
 
 
 @app.on_event("startup")
@@ -22,12 +22,12 @@ def load_clf():
 
 
 @app.get("/")
-def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+def home(): #request: Request
+    return "Hello" #templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.post("/")
-async def home_predict(request: Request, file: UploadFile = File(...) ):
+async def home_predict( file: UploadFile = File(...) ): #request: Request,
     
     #img = cv2.imread(file.filename)
     img_bytes=file.file.read()
@@ -49,7 +49,7 @@ async def home_predict(request: Request, file: UploadFile = File(...) ):
     	score=pred *100	
     	
     result={"Prediction": out, "Confidence_Score" : str(score) + "%" }
-    return templates.TemplateResponse("index.html", {"request": request, 'result': result})
+    return result#templates.TemplateResponse("index.html", {"request": request, 'result': result})
     
 @app.post("/predict")
 async def predict(file: UploadFile = File(...) ):

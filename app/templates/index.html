@@ -15,19 +15,4 @@
         rel="stylesheet">
 </head>
 
-<body style="font-family: Poppings;">
-    <div>
-        <form method="post" enctype="multipart/form-data">
-            <input type="file"name="file"/>
-            <input type="submit"/>
-        </form>
-    </div>
-    {% if result%}
-    <div>
-        <p>Condition: {{result.Prediction}}</p>
-        <p>Confidence Score: {{result.Confidence_Score}}</p>
-    </div>
-    {% endif %}
-</body>
-
 </html>

@@ -9,10 +9,6 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(title="Predicting Covid Class")
 
-#app.mount("/static", StaticFiles(directory="static"), name="static")
-#templates = Jinja2Templates(directory="/app/templates")
-
-
 @app.on_event("startup")
 def load_clf():
     # Load classifier from pickle file

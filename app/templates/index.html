@@ -22,10 +22,12 @@
             <input type="submit">
         </form>
     </div>
+    {% if result%}
     <div>
         <p>Condition: {{result.Prediction}}</p>
         <p>Confidence Score: {{result.Confidence_Score}}</p>
     </div>
+    {% endif %}
 </body>
 
 </html>

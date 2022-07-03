@@ -1,5 +1,5 @@
 fastapi==0.78.0
-numpy==1.21.6
+numpy
 opencv_python_headless==4.5.1.48
 uvicorn
 joblib

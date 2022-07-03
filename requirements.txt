@@ -1,6 +1,5 @@
 opencv-python
 uvicorn
 joblib
-tensorflow
 python-multipart
 jinja2

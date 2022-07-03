@@ -12,11 +12,8 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras import layers
 import matplotlib.pyplot as plt
 
-
-
 train_data_path='Data/train/'
 test_data_path ='Data/test/'
-
 
 
 train_datagen = ImageDataGenerator(
